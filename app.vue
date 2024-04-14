@@ -25,7 +25,7 @@
         src="https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/rhitos_horizontal.png"
         height="41"
       />
-      <span>Copyright © 2024 - All right reserved</span>
+      <span>Copyright © {{ new Date().getFullYear() }} - All right reserved</span>
     </div>
     <div></div>
   </div>
