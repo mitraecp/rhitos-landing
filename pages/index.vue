@@ -69,6 +69,7 @@
             class="light-border-b"
             style="
               display: flex;
+              height: 142px;
               flex-direction: column;
               gap: 32px;
               padding-bottom: 42px;
@@ -100,21 +101,23 @@
             </div>
           </div>
         </div>
-        <div class="plan-card">
+        <div class="plan-card" style="border: 1px solid #536eee; position: relative;">
+          <div class="recommended-tag"><span>Recomendado</span></div>
           <div
             class="light-border-b"
             style="
               display: flex;
+              height: 142px;
               flex-direction: column;
               gap: 32px;
               padding-bottom: 42px;
               width: 100%;
             "
           >
-            <span class="text-medium">Lite</span>
+            <span class="text-medium">Enterprise</span>
             <div>
               <span class="text-xl"
-                >R$ 200,00 <i class="text-light">/mês</i></span
+                >R$ 400,00 <i class="text-light">/mês</i></span
               >
               <p class="text-light">30 dias de teste</p>
             </div>
@@ -141,18 +144,16 @@
             class="light-border-b"
             style="
               display: flex;
+              height: 142px;
               flex-direction: column;
               gap: 32px;
               padding-bottom: 42px;
               width: 100%;
             "
           >
-            <span class="text-medium">Lite</span>
+            <span class="text-medium">Pro</span>
             <div>
-              <span class="text-xl"
-                >R$ 200,00 <i class="text-light">/mês</i></span
-              >
-              <p class="text-light">30 dias de teste</p>
+              <img src="~~/assets/shiny.svg" alt="" />
             </div>
           </div>
           <div class="base-button" style="width: 100%">
@@ -188,6 +189,12 @@
 function openPage() {
   window.open("https://app.rhitos.com", "_blank");
 }
+
+const props = defineProps({
+  domain: String,
+});
+
+console.log("dominio na pagina: ", props.domain);
 </script>
 
 <style scoped>
@@ -300,6 +307,31 @@ function openPage() {
     /* Shadow/sm */
     box-shadow: 0px 1px 3px 0px rgba(16, 24, 40, 0.1),
       0px 1px 2px 0px rgba(16, 24, 40, 0.06);
+  }
+}
+
+.recommended-tag {
+  display: flex;
+  padding: 4px 2px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px 0px 0px 4px;
+  background: #536eee;
+  position: absolute;
+  right: -0.333px;
+  width: 109px;
+  top: 25px;
+  > span{
+    color: var(--Base-White, #FFF);
+text-align: center;
+
+/* Text xs / Bold */
+font-family: Inter;
+font-size: 12px;
+font-style: normal;
+font-weight: 700;
+line-height: 18px; /* 150% */
   }
 }
 

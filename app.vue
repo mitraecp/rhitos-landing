@@ -19,19 +19,23 @@
         <span>Testar grátis</span>
       </div>
     </div>
-    <NuxtPage />
+    <NuxtPage :domain="hostname" />
     <div class="footer">
       <img
         src="https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/rhitos_horizontal.png"
         height="41"
       />
-      <span>Copyright © {{ new Date().getFullYear() }} - All right reserved</span>
+      <span
+        >Copyright © {{ new Date().getFullYear() }} - All right reserved</span
+      >
     </div>
     <div></div>
   </div>
 </template>
 
 <script setup lang="ts">
+// const domain = window.location.hostname.split(".")[0];
+const { hostname } = useRequestURL();
 function openPage() {
   window.open("https://app.rhitos.com", "_blank");
 }
