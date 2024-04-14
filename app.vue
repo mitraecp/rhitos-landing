@@ -15,7 +15,7 @@
         <span>Funcionalidades</span>
         <span>Planos e Preços</span>
       </div>
-      <div class="base-button">
+      <div class="base-button" @click="openPage">
         <span>Testar grátis</span>
       </div>
     </div>
@@ -23,7 +23,11 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+function openPage() {
+  window.open("https://app.rhitos.com", "_blank");
+}
+</script>
 
 <style scoped>
 .header {

@@ -7,7 +7,7 @@
         Personalizados e Acompanhe a Evolução do Bem-Estar dos Colaboradores ao
         Longo do Tempo.
       </span>
-      <div class="base-button">
+      <div class="base-button" @click="openPage">
         <span>Testar grátis</span>
       </div>
     </div>
@@ -15,7 +15,11 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+function openPage() {
+  window.open("https://app.rhitos.com", "_blank");
+}
+</script>
 
 <style scoped>
 .home-main__left-card {
