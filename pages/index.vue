@@ -1,6 +1,6 @@
 <template>
   <div class="content-wrapper">
-    <div v-if="$isRhitos" class="home-main">
+    <div v-if="isRhitos" class="home-main">
       <div class="home-main__left-card">
         <span class="title">O Caminho para Colaboradores Mais Felizes.</span>
         <span class="subtitle"
