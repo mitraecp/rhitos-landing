@@ -5,22 +5,26 @@
       '--primaryColor': color,
     }"
   >
-    <NuxtLoadingIndicator
-      color="
-				red
-			"
-    />
+    <NuxtLoadingIndicator :color="color" />
     <div class="header">
       <img
         :src="`https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${domain}_horizontal.png`"
         height="41"
       />
       <div class="header-menu">
-        <span>Home</span>
-        <span>Funcionalidades</span>
-        <span>Planos e Preços</span>
+        <span v-for="(item, idx) in menuItems" :key="idx" @click="item.fn">{{
+          item.name
+        }}</span>
       </div>
-      <div class="base-button" @click="openPage">
+      <div
+        class="base-button"
+        :style="getButtonStyle"
+        @click="openPage"
+        v-if="
+          (domain === 'duckcountant' && useRoute().path !== '/') ||
+          domain !== 'duckcountant'
+        "
+      >
         <span>Testar grátis</span>
       </div>
     </div>
@@ -48,16 +52,76 @@
 <script setup lang="ts">
 // const domain = window.location.hostname.split(".")[0];
 const domainRefs = ["longsights", "duckcountant", "billabletrack", "rhitos"];
-import { useFavicon } from '@vueuse/core'
+import { useFavicon } from "@vueuse/core";
 
 const { hostname } = useRequestURL();
 const domain =
-  hostname === "localhost" ? domainRefs[0] : hostname.split(".")[1];
+  hostname === "localhost" ? domainRefs[1] : hostname.split(".")[1];
 
 console.log("hostname", domain);
 
-const icon = useFavicon()
-icon.value = `https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${domain}favicon.ico`
+const icon = useFavicon();
+icon.value = `https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${domain}favicon.ico`;
+
+const getButtonStyle = computed(() => {
+  if (domain === "duckcountant" && useRoute().path === "/resumo-contabil") {
+    return {
+      backgroundColor: "#FFB800",
+
+      border: "none",
+    };
+  }
+});
+
+const menuItems = computed(() => {
+  if (["longsights", "rhitos", "billabletrack"].includes(domain)) {
+    return [
+      { name: "Home", fn: () => {} },
+      { name: "Funcionalidades", fn: () => {} },
+      { name: "Planos e Preços", fn: () => {} },
+    ];
+  } else if (domain === "duckcountant") {
+    if (useRoute().path === "/") {
+      return [
+        {
+          name: "Home",
+          fn: () => {
+            useRouter().push(`/`);
+          },
+        },
+        {
+          name: "Fluxo de Caixa",
+          fn: () => {
+            useRouter().push(`/fluxo-de-caixa`);
+          },
+        },
+        {
+          name: "Resumo Contábil",
+          fn: () => {
+            useRouter().push(`/resumo-contabil`);
+          },
+        },
+      ];
+    } else {
+      return [
+        {
+          name: "Home",
+          fn: () => {
+            useRouter().push(`/`);
+          },
+        },
+        {
+          name: "Funcionalidades",
+          fn: () => {},
+        },
+        {
+          name: "Planos e Preços",
+          fn: () => {},
+        },
+      ];
+    }
+  }
+});
 
 function openPage() {
   window.open(`https://app.${domain}.com`, "_blank");
