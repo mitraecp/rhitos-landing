@@ -474,7 +474,7 @@ const props = defineProps({
 }
 
 .banner-card--rhitos {
-  background-color: v-bind(primaryColor);
+  background-color: #536eee;
   .base-button{
     border: none !important;
   }
