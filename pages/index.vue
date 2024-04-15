@@ -403,7 +403,7 @@
           </div>
         </div>
       </div>
-      <div class="banner-card" v-if="isRhitos">
+      <div class="banner-card banner-card banner-card--rhitos" v-if="isRhitos">
         <span>
           Simplifique Pesquisas de Satisfação e Capacite sua Equipe com
           <b>Insights Inteligentes</b>
@@ -471,6 +471,10 @@ const props = defineProps({
 
 .banner-card--longsights {
   background-color: #fb275d;
+}
+
+.banner-card--rhitos {
+  background-color: v-bind(primaryColor);
 }
 
 .banner-card {
