@@ -34,12 +34,12 @@
     </div>
     <div class="home-main" style="height: 643px">
       <div class="home-main__img-cards" v-if="isLongsights">
-        <img src="`~~/assets/screenshot_01_longsights.png`" />
-        <img src="`~~/assets/screenshot_01_longsights.png`" />
+        <img src="~~/assets/screenshot_01_longsights.png" />
+        <img src="~~/assets/screenshot_01_longsights.png" />
       </div>
       <div class="home-main__img-cards" v-if="isRhitos">
-        <img src="`~~/assets/screenshot_01_rhitos.png`" />
-        <img src="`~~/assets/screenshot_01_rhitos.png`" />
+        <img src="~~/assets/screenshot_01_rhitos.png" />
+        <img src="~~/assets/screenshot_01_rhitos.png" />
       </div>
       <div
         v-if="isRhitos"
