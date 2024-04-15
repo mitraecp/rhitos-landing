@@ -408,7 +408,7 @@
           Simplifique Pesquisas de Satisfação e Capacite sua Equipe com
           <b>Insights Inteligentes</b>
         </span>
-        <div class="base-button"><span>Experimente Já!</span></div>
+        <div class="base-button" style="border: none"><span>Experimente Já!</span></div>
       </div>
       <div class="banner-card banner-card--longsights" v-if="isLongsights">
         <span class="text">
