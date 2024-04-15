@@ -43,6 +43,7 @@
 <script setup lang="ts">
 // const domain = window.location.hostname.split(".")[0];
 const { hostname } = useRequestURL();
+console.log('hostname', hostname);
 // const hostname = "longsights";
 
 function openPage() {
