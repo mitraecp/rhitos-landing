@@ -7,7 +7,7 @@
     />
     <div class="header">
       <img
-        src="https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/rhitos_horizontal.png"
+        :src="`https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${hostname}_horizontal.png`"
         height="41"
       />
       <div class="header-menu">
@@ -19,10 +19,17 @@
         <span>Testar grátis</span>
       </div>
     </div>
-    <NuxtPage :domain="hostname" />
+    <NuxtPage
+      :is-longsights="hostname === `longsights`"
+      :is-rhitos="hostname === `rhitos`"
+      :is-duckcoutant="hostname === `duckcoutant`"
+      :is-billabletrack="hostname === `billabletrack`"
+      :primary-color="color"
+      :hostname="hostname"
+    />
     <div class="footer">
       <img
-        src="https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/rhitos_horizontal.png"
+      :src="`https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${hostname}_horizontal.png`"
         height="41"
       />
       <span
@@ -36,9 +43,24 @@
 <script setup lang="ts">
 // const domain = window.location.hostname.split(".")[0];
 const { hostname } = useRequestURL();
+// const hostname = "longsights";
+
 function openPage() {
   window.open("https://app.rhitos.com", "_blank");
 }
+
+const color = computed(() => {
+  const hostname = "longsights";
+  if (hostname === "longsights") {
+    return "#00CA72";
+  } else if (hostname === "duckcoutant") {
+    return "#54BF4C";
+  } else if (hostname === "billabletrack") {
+    return "#117388";
+  } else if (hostname === "rhitos") {
+    return "#536EEE";
+  }
+});
 </script>
 
 <style scoped>
@@ -98,8 +120,8 @@ body {
 
 .base-button {
   border-radius: 8px;
-  border: 1px solid #536eee;
-  background: #536eee;
+  border: 1px solid v-bind(color);
+  background: v-bind(color);
   display: flex;
   padding: 12px 0;
   justify-content: center;
@@ -110,7 +132,6 @@ body {
   box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   > span {
     color: var(--Base-White, #fff);
-
     /* Text md/Medium */
     font-family: Inter;
     font-size: 16px;
@@ -151,6 +172,10 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 18px; /* 150% */
+  margin: 0;
+}
+
+p {
   margin: 0;
 }
 
