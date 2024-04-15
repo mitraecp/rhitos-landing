@@ -77,8 +77,17 @@ const menuItems = computed(() => {
   if (["longsights", "rhitos", "billabletrack"].includes(domain)) {
     return [
       { name: "Home", fn: () => {} },
-      { name: "Funcionalidades", fn: () => {} },
-      { name: "Planos e Preços", fn: () => {} },
+      { name: "Funcionalidades", fn: () => {
+         document
+              .getElementById("features")
+              ?.scrollIntoView({ behavior: "smooth" });
+      } },
+      { name: "Planos e Preços", fn: () => {
+         document
+              .getElementById("plansAndPrices")
+              ?.scrollIntoView({ behavior: "smooth" });
+      }
+     },
     ];
   } else if (domain === "duckcountant") {
     if (useRoute().path === "/") {
@@ -112,11 +121,19 @@ const menuItems = computed(() => {
         },
         {
           name: "Funcionalidades",
-          fn: () => {},
+          fn: () => {
+            document
+              .getElementById("features")
+              ?.scrollIntoView({ behavior: "smooth" });
+          },
         },
         {
           name: "Planos e Preços",
-          fn: () => {},
+          fn: () => {
+            document
+              .getElementById("plansAndPrices")
+              ?.scrollIntoView({ behavior: "smooth" });
+          },
         },
       ];
     }
