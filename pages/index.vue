@@ -164,7 +164,11 @@
         </div>
         <div
           class="plan-card"
-          style="border: 1px solid #536eee; position: relative"
+          style="
+            border: 1px solid #536eee;
+            position: relative;
+            background-color: #f5faff;
+          "
         >
           <div class="recommended-tag"><span>Recomendado</span></div>
           <div
@@ -238,16 +242,16 @@
           </div>
         </div>
       </div>
-      <div class="banner-card">
+      <div class="banner-card banner-card--rhitos">
         <span>
           Simplifique Pesquisas de Satisfação e Capacite sua Equipe com
           <b>Insights Inteligentes</b>
         </span>
-        <div class="base-button"><span>Experimente Já!</span></div>
+        <div class="base-button" style="border: none"><span>Experimente Já!</span></div>
       </div>
     </div>
     <div class="home-main plans-and-prices" v-if="isLongsights">
-      <div class="home-main__left-card" style="width: auto; height: auto;">
+      <div class="home-main__left-card" style="width: auto; height: auto">
         <span class="title">Planos e Preços</span>
         <span class="banner"
           >Preços competitivos para sua transformação de Planejamento
@@ -306,6 +310,7 @@
           class="plan-card"
           :style="{
             border: `1px solid ${primaryColor}`,
+            backgroundColor: `#F5FAFF`,
           }"
           style="position: relative"
         >
@@ -403,14 +408,7 @@
           </div>
         </div>
       </div>
-      <div class="banner-card banner-card banner-card--rhitos" v-if="isRhitos">
-        <span>
-          Simplifique Pesquisas de Satisfação e Capacite sua Equipe com
-          <b>Insights Inteligentes</b>
-        </span>
-        <div class="base-button" style="border: none"><span>Experimente Já!</span></div>
-      </div>
-      <div class="banner-card banner-card--longsights" v-if="isLongsights">
+      <div class="banner-card banner-card--longsights">
         <span class="text">
           Transforme sua Estratégia em Resultados:
           <p class="subtitle">
@@ -419,7 +417,12 @@
         </span>
         <div
           class="base-button"
-          style="height: 48px; padding: 0; border: 1px solid #fb275d"
+          style="
+            height: 48px;
+            padding: 0;
+            border: 1px solid #fb275d;
+            color: red;
+          "
         >
           <span style="color: #fb275d">Experimente Já!</span>
         </div>
@@ -474,8 +477,8 @@ const props = defineProps({
 }
 
 .banner-card--rhitos {
-  background-color: #536eee;
-  .base-button{
+  background-color: #536eee !important;
+  .base-button {
     border: none !important;
   }
 }

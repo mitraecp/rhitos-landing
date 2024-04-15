@@ -7,7 +7,7 @@
     />
     <div class="header">
       <img
-        :src="`https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${hostname}_horizontal.png`"
+        :src="`https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${domain}_horizontal.png`"
         height="41"
       />
       <div class="header-menu">
@@ -20,16 +20,16 @@
       </div>
     </div>
     <NuxtPage
-      :is-longsights="hostname === `longsights`"
-      :is-rhitos="hostname === `rhitos`"
-      :is-duckcoutant="hostname === `duckcoutant`"
-      :is-billabletrack="hostname === `billabletrack`"
+      :is-longsights="domain === `longsights`"
+      :is-rhitos="domain === `rhitos`"
+      :is-duckcoutant="domain === `duckcoutant`"
+      :is-billabletrack="domain === `billabletrack`"
       :primary-color="color"
-      :hostname="hostname"
+      :domain="domain"
     />
     <div class="footer">
       <img
-        :src="`https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${hostname}_horizontal.png`"
+        :src="`https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${domain}_horizontal.png`"
         height="41"
       />
       <span
@@ -42,24 +42,28 @@
 
 <script setup lang="ts">
 // const domain = window.location.hostname.split(".")[0];
-const hostname = useRequestURL().hostname.split(".")[1];
-console.log("hostname", hostname);
+const { hostname } = useRequestURL();
+const domain = hostname === "localhost" ? "rhitos" : hostname.split(".")[1];
+
+console.log("hostname", domain);
 // const hostname = "longsights";
 
 function openPage() {
-  window.open(`https://app.${hostname}.com`, "_blank");
+  window.open(`https://app.${domain}.com`, "_blank");
 }
 
 const color = computed(() => {
-  const hostname = "longsights";
-  if (hostname === "longsights") {
-    return "#00CA72";
-  } else if (hostname === "duckcoutant") {
-    return "#54BF4C";
-  } else if (hostname === "billabletrack") {
-    return "#117388";
-  } else if (hostname === "rhitos") {
-    return "#536EEE";
+  switch (domain) {
+    case "longsights":
+      return "#00CA72";
+    case "duckcoutant":
+      return "#54BF4C";
+    case "billabletrack":
+      return "#117388";
+    case "rhitos":
+      return "#536EEE";
+    default:
+      return "";
   }
 });
 </script>
@@ -122,7 +126,7 @@ body {
 .base-button {
   border-radius: 8px;
   border: 1px solid v-bind(color);
-  background: v-bind(color);
+  background-color: v-bind(color);
   display: flex;
   padding: 12px 0;
   justify-content: center;
