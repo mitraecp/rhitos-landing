@@ -48,12 +48,16 @@
 <script setup lang="ts">
 // const domain = window.location.hostname.split(".")[0];
 const domainRefs = ["longsights", "duckcountant", "billabletrack", "rhitos"];
+import { useFavicon } from '@vueuse/core'
 
 const { hostname } = useRequestURL();
-const domain = hostname === "localhost" ? domainRefs[0] : hostname.split(".")[1];
+const domain =
+  hostname === "localhost" ? domainRefs[0] : hostname.split(".")[1];
 
 console.log("hostname", domain);
-// const hostname = "longsights";
+
+const icon = useFavicon()
+icon.value = `https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${domain}favicon.ico`
 
 function openPage() {
   window.open(`https://app.${domain}.com`, "_blank");

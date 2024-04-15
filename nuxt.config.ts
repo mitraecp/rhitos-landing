@@ -13,6 +13,9 @@ export default defineNuxtConfig({
       script: [],
     },
   },
+  modules: [
+    '@vueuse/nuxt',
+  ],
   components: [
     { path: "~/components/", pathPrefix: false },
     { path: "node_modules/@jamescoyle/vue-icon/lib" },
