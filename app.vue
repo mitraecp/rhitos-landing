@@ -29,7 +29,7 @@
     />
     <div class="footer">
       <img
-      :src="`https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${hostname}_horizontal.png`"
+        :src="`https://raw.githubusercontent.com/mitraecp/frontend-resoucers/gc/assets/mitra_sheet/${hostname}_horizontal.png`"
         height="41"
       />
       <span
@@ -43,11 +43,11 @@
 <script setup lang="ts">
 // const domain = window.location.hostname.split(".")[0];
 const hostname = useRequestURL().hostname.split(".")[1];
-console.log('hostname', hostname);
+console.log("hostname", hostname);
 // const hostname = "longsights";
 
 function openPage() {
-  window.open("https://app.rhitos.com", "_blank");
+  window.open(`https://app.${hostname}.com`, "_blank");
 }
 
 const color = computed(() => {
