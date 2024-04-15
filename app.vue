@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 // const domain = window.location.hostname.split(".")[0];
-const { hostname } = useRequestURL();
+const hostname = useRequestURL().hostname.split(".")[0];
 console.log('hostname', hostname);
 // const hostname = "longsights";
 
