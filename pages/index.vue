@@ -8,12 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import { mdiCreation, mdiCheck } from "@mdi/js";
-
-function openPage() {
-  window.open("https://app.rhitos.com", "_blank");
-}
-const props = defineProps({
+defineProps({
   isLongsights: Boolean,
   isRhitos: Boolean,
   isDuckcountant: Boolean,

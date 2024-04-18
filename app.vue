@@ -42,7 +42,7 @@
         height="41"
       />
       <span
-        >Copyright © {{ new Date().getFullYear() }} - All right reserved</span
+        >Copyright © {{ new Date().getFullYear() }} - All rights reserved</span
       >
     </div>
     <div></div>
@@ -56,7 +56,7 @@ import { useFavicon } from "@vueuse/core";
 
 const { hostname } = useRequestURL();
 const domain =
-  hostname === "localhost" ? domainRefs[1] : hostname.split(".")[1];
+  hostname === "localhost" ? domainRefs[3] : hostname.split(".")[1];
 
 console.log("hostname", domain);
 
@@ -79,12 +79,12 @@ const menuItems = computed(() => {
       { name: "Home", fn: () => {} },
       { name: "Funcionalidades", fn: () => {
          document
-              .getElementById("features")
+              .getElementById("features-anchor")
               ?.scrollIntoView({ behavior: "smooth" });
       } },
       { name: "Planos e Preços", fn: () => {
          document
-              .getElementById("plansAndPrices")
+              .getElementById("plans-and-prices-anchor")
               ?.scrollIntoView({ behavior: "smooth" });
       }
      },
@@ -123,7 +123,7 @@ const menuItems = computed(() => {
           name: "Funcionalidades",
           fn: () => {
             document
-              .getElementById("features")
+              .getElementById("features-anchor")
               ?.scrollIntoView({ behavior: "smooth" });
           },
         },
@@ -131,7 +131,7 @@ const menuItems = computed(() => {
           name: "Planos e Preços",
           fn: () => {
             document
-              .getElementById("plansAndPrices")
+              .getElementById("plans-and-prices-anchor")
               ?.scrollIntoView({ behavior: "smooth" });
           },
         },

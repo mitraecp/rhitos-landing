@@ -18,6 +18,9 @@
       </div>
       <div class="video-wrapper"></div>
     </div>
+
+    <div id="features-anchor"></div>
+
     <div class="home-main" style="height: 665px">
       <div class="home-main__img-cards">
         <img src="~~/assets/screenshot_01_billabletrack.png" />
@@ -63,6 +66,8 @@
       </div>
     </div>
 
+    <div id="plans-and-prices-anchor"></div>
+    
     <div class="home-main plans-and-prices">
       <div class="home-main__left-card" style="width: auto; height: auto">
         <span class="title">Planos e Preços</span>
@@ -227,10 +232,11 @@
 import { mdiCreation, mdiCheck } from "@mdi/js";
 
 function openPage() {
-  window.open("https://app.longsights.com", "_blank");
+  window.open(
+    "https://app.longsights.com/new-template-4J1GxZTNsv4JBcMWS7Mi",
+    "_blank"
+  );
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

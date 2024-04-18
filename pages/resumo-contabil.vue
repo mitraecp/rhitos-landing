@@ -24,6 +24,9 @@
       </div>
       <div class="video-wrapper"></div>
     </div>
+
+    <div id="features-anchor"></div>
+
     <div class="home-main" style="height: 643px">
       <div class="home-main__img-cards">
         <img src="~~/assets/screenshot_01_duck.png" />
@@ -69,6 +72,8 @@
         </div>
       </div>
     </div>
+
+    <div id="plans-and-prices-anchor"></div>
 
     <div class="home-main plans-and-prices">
       <div class="home-main__left-card" style="width: auto; height: auto">
@@ -235,7 +240,7 @@
         <div
           class="base-button"
           @click="openPage"
-          style="height: 48px; padding: 0; background-color: #FFF;"
+          style="height: 48px; padding: 0; background-color: #fff"
         >
           <span>Experimente Já!</span>
         </div>
@@ -247,14 +252,24 @@
 <script setup lang="ts">
 import { mdiCreation, mdiCheck } from "@mdi/js";
 function openPage() {
-  window.open("https://app.duckcountant.com", "_blank");
+  window.open(
+    "https://app.duckcountant.com/new-template-qLwUdhaaLcSMRBdSZYMo",
+    "_blank"
+  );
 }
+
+definePageMeta({
+  middleware: (_from, to) => {
+    if (to.fullPath === "/resumo-contabil") {
+      return "/";
+    }
+  },
+});
 </script>
 
 <style scoped>
-    .base-button{
-        background-color: var(--primaryColor);
-        border: none !important;
-    }
-
+.base-button {
+  background-color: var(--primaryColor);
+  border: none !important;
+}
 </style>

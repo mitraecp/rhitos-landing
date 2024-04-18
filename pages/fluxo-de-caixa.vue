@@ -19,6 +19,8 @@
       </div>
       <div class="video-wrapper"></div>
     </div>
+
+    <div id="features-anchor"></div>
     <div class="home-main" style="height: 643px">
       <div class="home-main__img-cards">
         <img src="~~/assets/screenshot_01_duck.png" />
@@ -26,7 +28,6 @@
       </div>
 
       <div
-        id="features"
         style="display: flex; flex-direction: column; gap: 32px; width: 620px"
       >
         <div class="right-content__features">
@@ -65,7 +66,9 @@
       </div>
     </div>
 
-    <div class="home-main plans-and-prices" id="plansAndPrices">
+    <div id="plans-and-prices-anchor"></div>
+
+    <div class="home-main plans-and-prices">
       <div class="home-main__left-card" style="width: auto; height: auto">
         <span class="title">Planos e Preços</span>
         <span class="banner"
@@ -243,8 +246,20 @@
 
 <script setup lang="ts">
 import { mdiCreation, mdiCheck } from "@mdi/js";
+
+definePageMeta({
+  middleware: (_from, to) => {
+    if (to.fullPath === "/fluxo-de-caixa") {
+      return "/";
+    }
+  },
+});
+
 function openPage() {
-  window.open("https://app.duckcountant.com", "_blank");
+  window.open(
+    "https://app.duckcountant.com/new-template-zCJTz5ambQkWrPSD99m9",
+    "_blank"
+  );
 }
 </script>
 
