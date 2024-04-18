@@ -251,11 +251,11 @@
 
 <script setup lang="ts">
 import { mdiCreation, mdiCheck } from "@mdi/js";
+
+const emit = defineEmits(["open-page"]);
+
 function openPage() {
-  window.open(
-    "https://app.duckcountant.com/new-template-qLwUdhaaLcSMRBdSZYMo",
-    "_blank"
-  );
+  emit("open-page");
 }
 
 definePageMeta({

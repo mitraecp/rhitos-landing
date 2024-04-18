@@ -240,8 +240,10 @@
 <script setup lang="ts">
 import { mdiCreation, mdiCheck } from "@mdi/js";
 
+const emit = defineEmits(["open-page"]);
+
 function openPage() {
-  window.open("https://app.rhitos.com/new-template-wB8YNxcIJEPzjQBdLw9K", "_blank");
+  emit("open-page");
 }
 </script>
 

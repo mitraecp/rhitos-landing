@@ -255,11 +255,10 @@ definePageMeta({
   },
 });
 
+const emit = defineEmits(["open-page"]);
+
 function openPage() {
-  window.open(
-    "https://app.duckcountant.com/new-template-zCJTz5ambQkWrPSD99m9",
-    "_blank"
-  );
+  emit("open-page");
 }
 </script>
 

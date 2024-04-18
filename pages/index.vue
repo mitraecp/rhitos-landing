@@ -1,9 +1,9 @@
 <template>
   <div class="content-wrapper">
-    <BillabletrackView v-if="isBillabletrack" />
-    <LongsightsView v-if="isLongsights" />
-    <RhitosView v-if="isRhitos" />
-    <DuckcountantView v-if="isDuckcountant" />
+    <BillabletrackView v-if="isBillabletrack" @open-page="emit('open-page')" />
+    <LongsightsView v-if="isLongsights" @open-page="emit('open-page')" />
+    <RhitosView v-if="isRhitos" @open-page="emit('open-page')" />
+    <DuckcountantView v-if="isDuckcountant" @open-page="emit('open-page')" />
   </div>
 </template>
 
@@ -16,6 +16,8 @@ defineProps({
   hostname: String,
   primaryColor: String,
 });
+
+const emit = defineEmits(["open-page"]);
 </script>
 
 <style scoped>

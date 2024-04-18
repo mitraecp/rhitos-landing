@@ -236,10 +236,7 @@
         <div
           class="base-button"
           @click="openPage"
-          style="
-            height: 48px;
-            padding: 0;
-          "
+          style="height: 48px; padding: 0"
         >
           <span>Experimente Já!</span>
         </div>
@@ -251,8 +248,10 @@
 <script setup lang="ts">
 import { mdiCreation, mdiCheck } from "@mdi/js";
 
+const emit = defineEmits(["open-page"]);
+
 function openPage() {
-  window.open("https://app.longsights.com/new-template-vjQO110AgjswGVnzYD0h", "_blank");
+  emit("open-page");
 }
 </script>
 

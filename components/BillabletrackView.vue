@@ -67,7 +67,7 @@
     </div>
 
     <div id="plans-and-prices-anchor"></div>
-    
+
     <div class="home-main plans-and-prices">
       <div class="home-main__left-card" style="width: auto; height: auto">
         <span class="title">Planos e Preços</span>
@@ -231,11 +231,10 @@
 <script setup lang="ts">
 import { mdiCreation, mdiCheck } from "@mdi/js";
 
+const emit = defineEmits(["open-page"]);
+
 function openPage() {
-  window.open(
-    "https://app.longsights.com/new-template-4J1GxZTNsv4JBcMWS7Mi",
-    "_blank"
-  );
+  emit("open-page");
 }
 </script>
 

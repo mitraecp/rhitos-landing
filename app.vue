@@ -35,6 +35,7 @@
       :is-billabletrack="domain === `billabletrack`"
       :primary-color="color"
       :domain="domain"
+      @open-page="openPage"
     />
     <div class="footer">
       <img
@@ -73,21 +74,40 @@ const getButtonStyle = computed(() => {
   }
 });
 
+const projectId = computed(() => {
+  if (domain === "longsights") {
+    return "vjQO110AgjswGVnzYD0h";
+  } else if (domain === "duckcountant") {
+    return useRoute().path === "/resumo-contabil"
+      ? "qLwUdhaaLcSMRBdSZYMo"
+      : "zCJTz5ambQkWrPSD99m9";
+  } else if (domain === "billabletrack") {
+    return "4J1GxZTNsv4JBcMWS7Mi";
+  } else if (domain === "rhitos") {
+    return "wB8YNxcIJEPzjQBdLw9K";
+  }
+});
+
 const menuItems = computed(() => {
   if (["longsights", "rhitos", "billabletrack"].includes(domain)) {
     return [
       { name: "Home", fn: () => {} },
-      { name: "Funcionalidades", fn: () => {
-         document
-              .getElementById("features-anchor")
-              ?.scrollIntoView({ behavior: "smooth" });
-      } },
-      { name: "Planos e Preços", fn: () => {
-         document
-              .getElementById("plans-and-prices-anchor")
-              ?.scrollIntoView({ behavior: "smooth" });
-      }
-     },
+      {
+        name: "Funcionalidades",
+        fn: () => {
+          document
+            .getElementById("features-anchor")
+            ?.scrollIntoView({ behavior: "smooth" });
+        },
+      },
+      {
+        name: "Planos e Preços",
+        fn: () => {
+          document
+            .getElementById("plans-and-prices-anchor")
+            ?.scrollIntoView({ behavior: "smooth" });
+        },
+      },
     ];
   } else if (domain === "duckcountant") {
     if (useRoute().path === "/") {
@@ -141,7 +161,10 @@ const menuItems = computed(() => {
 });
 
 function openPage() {
-  window.open(`https://app.${domain}.com`, "_blank");
+  window.open(
+    `https://app.${domain}.com/new-template-${projectId.value}`,
+    "_blank"
+  );
 }
 
 const color = computed(() => {
