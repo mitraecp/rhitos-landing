@@ -1,7 +1,8 @@
 <template>
   <div class="home-main">
     <div class="home-main__left-card" style="height: 297px">
-      <div class="video-wrapper"></div>
+      <img src="~~/assets/duckcountant_home_01.png" />
+
       <div class="info-side">
         <div class="title-section">
           <img src="~~/assets/fluxo-de-caixa.png" />
@@ -37,7 +38,7 @@
           <span>Conheça</span>
         </div>
       </div>
-      <div class="video-wrapper"></div>
+      <img src="~~/assets/duckcountant_home_02.png" />
     </div>
   </div>
 </template>

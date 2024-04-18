@@ -16,15 +16,15 @@
           <span>Testar grátis</span>
         </div>
       </div>
-      <div class="video-wrapper"></div>
+      <img src="~~/assets/billabletrack_home_01.png" width="512" height="288" />
     </div>
 
     <div id="features-anchor"></div>
 
     <div class="home-main" style="height: 665px">
       <div class="home-main__img-cards">
-        <img src="~~/assets/screenshot_01_billabletrack.png" />
-        <img src="~~/assets/screenshot_01_billabletrack.png" />
+        <img src="~~/assets/billabletrack_sample_01.png" />
+        <img src="~~/assets/billabletrack_sample_02.png" />
       </div>
 
       <div

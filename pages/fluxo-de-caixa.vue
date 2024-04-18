@@ -17,14 +17,14 @@
           <span>Testar grátis</span>
         </div>
       </div>
-      <div class="video-wrapper"></div>
+      <img src="~~/assets/duckcountant_home_01.png" width="512" height="288" />
     </div>
 
     <div id="features-anchor"></div>
     <div class="home-main" style="height: 643px">
       <div class="home-main__img-cards">
-        <img src="~~/assets/screenshot_01_duck.png" />
-        <img src="~~/assets/screenshot_02_duck.png" />
+        <img src="~~/assets/fluxo_de_caixa_02.png" />
+        <img src="~~/assets/fluxo_de_caixa_01.png" />
       </div>
 
       <div

@@ -57,7 +57,7 @@ import { useFavicon } from "@vueuse/core";
 
 const { hostname } = useRequestURL();
 const domain =
-  hostname === "localhost" ? domainRefs[3] : hostname.split(".")[1];
+  hostname === "localhost" ? domainRefs[1] : hostname.split(".")[1];
 
 console.log("hostname", domain);
 
@@ -68,7 +68,6 @@ const getButtonStyle = computed(() => {
   if (domain === "duckcountant" && useRoute().path === "/resumo-contabil") {
     return {
       backgroundColor: "#FFB800",
-
       border: "none",
     };
   }

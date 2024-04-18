@@ -16,15 +16,15 @@
           <span>Testar grátis</span>
         </div>
       </div>
-      <div class="video-wrapper"></div>
+      <img src="~~/assets/longsights_home_01.png" width="528px" height="276px" />
     </div>
 
     <div id="features-anchor"></div>
 
     <div class="home-main" style="height: 643px">
       <div class="home-main__img-cards">
-        <img src="~~/assets/screenshot_01_longsights.png" />
-        <img src="~~/assets/screenshot_01_longsights.png" />
+        <img src="~~/assets/longsights_sample_01.png" />
+        <img src="~~/assets/longsights_sample_02.png" />
       </div>
 
       <div
